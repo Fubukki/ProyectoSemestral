@@ -5,27 +5,27 @@ $(document).ready(function () {
         let msjMostrar = "";
         let envioCorrecto = false;
 
-        if(n.trim().length<4 || n.trim().length>7){
+        if (n.trim().length < 4 || n.trim().length > 7) {
             msjMostrar += "El nombre no tiene la longitud correcta<br>";
             envioCorrecto = true;
         }
 
         var letraNombre = n.charAt(0);
-        if(!esMayuscula(letraNombre)){
+        if (!esMayuscula(letraNombre)) {
             msjMostrar += "Es minúscula<br>";
             envioCorrecto = true;
         }
 
-        if(envioCorrecto){
+        if (envioCorrecto) {
             $("#mensajes").html(msjMostrar);
         }
-        else{
+        else {
             $("#mensajes").html("Formulario Enviado");
         }
 
     });
 
-    function esMayuscula(letra){
+    function esMayuscula(letra) {
         return letra == letra.toUpperCase();
     }
 })

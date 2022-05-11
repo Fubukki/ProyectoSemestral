@@ -1,16 +1,19 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
-   background: url(img/fondo\ H.webp);
+    background: url(img/fondo\ H.webp);
     background-size: cover;
     background-attachment: fixed;
 }
+
 h1 {
     color: white;
 }
+
 h2 {
     color: white;
 }
-p{
+
+p {
     color: white;
 }
