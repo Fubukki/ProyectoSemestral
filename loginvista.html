@@ -11,18 +11,23 @@
     </style>
 </head>  
 <body>
-    <form class="formulario" action="" method="POST" id="form">
+    <form class="formulario" action="" method="POST" id="form1">
         <h1>Login</h1>
         <div class="contenedor">
          <div class="input-contenedor">
-         <i class="fas fa-envelope icon"></i>
-         <input type="text" placeholder="Correo Electronico" id="correo" required><span class="barra" ></span>
-         <label for="">Email</label>
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <form method="POST" name="formulario" action="" id="form1">
+                    <div class="form-group">
+                        <label class="colorLetra">Nombre de Usuario</label>
+                        <input type="text" required class="form-control" name="nom" id="nom">
+                    </div>
          </div>
          <div class="input-contenedor">
-        <i class="fas fa-key icon"></i>
-         <input type="password" placeholder="Contraseña" id="clave" required><span class="barra" ></span>
-         <label for="">Password</label>
+            <label class="colorLetra">Correo electrónico</label>
+            <input type="email" class="form-control" name="correo" id="correo">
+        </div>
+        
          </div>
          <div class="col-md-12"> 
          <p>&nbsp;</p>

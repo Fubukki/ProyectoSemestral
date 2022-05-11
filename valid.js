@@ -1,44 +1,31 @@
 $(document).ready(function () {
-    $("#form").submit(function (e) {
+    $("#form1").submit(function (e) {
         e.preventDefault();
-        var nombre = $("#nombre").val();
-        var clave = $("#nombre").val();
-        var correo = $("#nombre").val();
-        var mensaje = "";
+        var n = $("#nom").val();
+        let msjMostrar = "";
+        let envioCorrecto = false;
 
-        let entrar = false;
-        let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/
-        
-
-        if (nombre.trim().length < 4 || nombre.trim().length > 12) {
-            mensaje += 'El nombre no es valido <br>';
-            entrar = true;
+        if(n.trim().length<4 || n.trim().length>7){
+            msjMostrar += "El nombre no tiene la longitud correcta<br>";
+            envioCorrecto = true;
         }
 
-        if (nombre == "Hola") {
-            mensaje += 'xxx <br>';
-            entrar = true;
+        var letraNombre = n.charAt(0);
+        if(!esMayuscula(letraNombre)){
+            msjMostrar += "Es minúscula<br>";
+            envioCorrecto = true;
         }
 
-        if (!regexEmail.test(correo)) {
-            mensaje += 'El email no es valido <br>'
-            entrar = true
+        if(envioCorrecto){
+            $("#mensajes").html(msjMostrar);
+        }
+        else{
+            $("#mensajes").html("Formulario Enviado");
         }
 
-        var letraValidar = nombre.charAt(0);
-        if (esMayuscula(letraValidar)) {
-            mensaje += 'yyy <br>';
-            entrar = true;
-        }
-
-        if (entrar) {
-            $("#warnings").html(mensaje);
-        } else {
-            $("#warnings").html("Enviado");
-        }
     });
 
-    function esMayuscula(letra) {
-        return letra === letra.toUpperCase();
+    function esMayuscula(letra){
+        return letra == letra.toUpperCase();
     }
 })
